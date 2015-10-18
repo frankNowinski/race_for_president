@@ -15,8 +15,8 @@ module RaceForPresident
       expect(@candidate.funds).to eq 1000
     end
 
-    it "starts with a popularity of 0" do
-      expect(@candidate.popularity).to eq 0
+    it "starts with an approval_rating of 0" do
+      expect(@candidate.approval_rating).to eq 0
     end
 
     it "adds money to funds" do 
@@ -32,9 +32,9 @@ module RaceForPresident
     end
 
     it "adds popularity" do 
-      @candidate.popularity_boost(10)
+      @candidate.approval_boost(10)
 
-      expect(@candidate.popularity).to eq 10
+      expect(@candidate.approval_rating).to eq 10
     end
   end
 end

@@ -1,4 +1,4 @@
-require'../../lib/race_for_president/fundraiser'
+require'../../lib/race_for_president/donations'
 
 module RaceForPresident
   describe Donation do
@@ -25,19 +25,19 @@ module RaceForPresident
     end
 
     it "has a donation in the amount of $3000" do 
-      expect(PossibleDonations::DONATIONS[2]).to eq Donation.new(3000)
+      expect(PossibleDonations::DONATIONS[2]).to eq Donation.new(4000)
     end
 
     it "has a donation in the amount of $4000" do 
-      expect(PossibleDonations::DONATIONS[3]).to eq Donation.new(4000)
+      expect(PossibleDonations::DONATIONS[3]).to eq Donation.new(6000)
     end
 
     it "has a donation in the amount of $6000" do 
-      expect(PossibleDonations::DONATIONS[4]).to eq Donation.new(6000)
+      expect(PossibleDonations::DONATIONS[4]).to eq Donation.new(8000)
     end
 
     it "has a donation in the amount of $8000" do 
-      expect(PossibleDonations::DONATIONS[5]).to eq Donation.new(8000)
+      expect(PossibleDonations::DONATIONS[5]).to eq Donation.new(12000)
     end
 
     it "returns a random donation" do 
