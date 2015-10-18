@@ -26,7 +26,7 @@ while !elected_president
     puts "\nEnter 'f' to hold a fundraising event and gain money.\nEnter 'r' to hold a rally and gain popularity.\nEnter 'q' to quit."
     puts "\n#{current_player.name}'s turn: "
     puts "Current funds: $#{current_player.funds}"
-    puts "Current popularity: #{current_player.popularity}%"
+    puts "Current popularity: #{current_player.approval_rating}%"
     answer = gets.chomp.downcase
   end
   

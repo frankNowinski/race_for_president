@@ -15,7 +15,7 @@ module RaceForPresident
     end
 
     def rally(candidate)
-      popularity = {
+      approval_rating = {
         1 => 1000,
         5 => 5000,
         10 => 10000,
@@ -23,33 +23,33 @@ module RaceForPresident
         20 => 20000
       }
 
-      puts "\nDetermine how much money you want to spend on your rally. The more you spend, the more popularity you earn. "
+      puts "\nDetermine how much money you want to spend on your rally. The more you spend, the more you improve your approval rating. "
       puts "AVAILABLE FUNDS: $#{candidate.funds}"
       puts
 
       answer = ''
       until ['1', '2', '3', '4', '5', 'q'].include? answer do
-        popularity.each_with_index do | (k,v), index|
-          print "Enter #{index+1} to spend $#{v} to achieve a boost in rating by #{k}%.\n"
+        approval_rating.each_with_index do | (k,v), index|
+          print "Enter #{index+1} to spend $#{v} to achieve a boost in your approval rating by #{k}%.\n"
         end
         answer = gets.chomp
       end
       puts
 
       if answer == "1" && candidate.funds >= 1000
-        candidate.popularity_boost(1)
+        candidate.approval_boost(1)
         candidate.remove_funds(1000)
       elsif answer == "2" && candidate.funds >= 5000
-        candidate.popularity_boost(5)
+        candidate.approval_boost(5)
         candidate.remove_funds(5000)
       elsif answer == "3" && candidate.funds >= 10000
-        candidate.popularity_boost(10)
+        candidate.approval_boost(10)
         candidate.remove_funds(10000)
       elsif answer == "4" && candidate.funds >= 15000
-        candidate.popularity_boost(15)
+        candidate.approval_boost(15)
         candidate.remove_funds(15000)
       elsif answer == "5" && candidate.funds >= 20000
-        candidate.popularity_boost(20)
+        candidate.approval_boost(20)
         candidate.remove_funds(20000)
       elsif answer == 'q'
         exit

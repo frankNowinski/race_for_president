@@ -4,29 +4,29 @@ module RaceForPresident
   class Candidate
     include AllocateFunds
 
-    attr_reader :popularity
+    attr_reader :approval_rating
     attr_accessor :name, :funds
 
     def initialize(name, funds=1000, popularity=0)
-      @name, @funds, @popularity = name.capitalize, funds, popularity
+      @name, @funds, @approval_rating = name.capitalize, funds, popularity
     end
 
-    def popularity_boost(num)
-      @popularity += num
-      puts "\n#{@name}'s popularity rating when up by #{num} point#{num == 1 ? '' : 's'}!"
+    def approval_boost(num)
+      @approval_rating += num
+      puts "\n#{@name}'s approval rating went up by #{num} point#{num == 1 ? '' : 's'}!"
     end
 
     def president?
-      @popularity >= 100
+      @approval_rating >= 100
     end
 
     def print
       funds_print = "#{@name}'s current funds".ljust(35, '.')
-      popularity_print = "#{@name}'s popularity rating".ljust(38, '.')
+      approval_print = "#{@name}'s approval rating".ljust(38, '.')
 
       puts "#{funds_print} $#{@funds}"
       puts "-".ljust(42, '-')
-      puts "#{popularity_print} #{@popularity}%"
+      puts "#{approval_print} #{@approval_rating}%"
       puts
     end
   end
